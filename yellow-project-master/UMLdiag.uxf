@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>190</y>
+      <w>210</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>Artist
+--
+-_id : int
+-_name : string
+-_century : int
+-_movement : string
+-_description : string
+--
++ Artist()
++ Artist(id : const int)
++ ~Artist()
++ string getNames() const
++ void lists_generator()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>310</x>
+      <y>170</y>
+      <w>300</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>/Work/
+--
+-_title : string
+-_length : string
+-_width : string
+-_date : string
+-_in : string
+-_id : int
+
+--
+/+ map&lt;char, string&gt; generateProp(string , const int alea ) = 0/
+/+ void lists_generator()/
+
++ friend ostream&amp; operator&lt;&lt;(ostream&amp; os, Work&amp; p)
++ string get_title()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>700</y>
+      <w>360</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>Paint
+--
+-_paint_type : string
+_title_ls, _artist_ls, _support_ls, _paintType_ls, _exposedIn_ls, _year_ls, _height_ls, _width_ls, _fig_ls, names : vector&lt;string&gt;
+--
++Paint()
++Paint(const int alea)
++~Paint()
++map&lt;char,string&gt; generateProp(string, const int alea)
++string enterRep()
++int generateSol(string rep,map&lt;char,string&gt; prop,string numQ, const int alea)
++friend ostream&amp; operator&lt;&lt;(ostream&amp; os, Paint&amp; p)
++void lists_generator()
++int get_paintNbr() const
++void print(const int alea)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>620</x>
+      <y>700</y>
+      <w>280</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>Sculpture
+--
+_title_ls, _artist_ls, _material_ls, _fig_ls : std::vector&lt;std::string&gt;
+--
++Sculpture();
++Sculpture(const int rnd);
++~Sculpture(){}; 
++std::map&lt;char,std::string&gt; generateProp(std::string, const int rnd);
++std::string enterRep();
++int generateSol(std::string rep,std::map&lt;char,std::string&gt; prop,std::string numQ, const int rnd);
++friend std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, Sculpture&amp; p);  
++void lists_generator(); //creates all the lists of the different attributes of a Sculpture
++int get_sculptNbr() const{return _title_ls.size(); };
++void print(const int rnd);</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>690</x>
+      <y>460</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>/troisD/
+--
+-_height : float
+-_weight : float
+-_material : string
+--
++void generateProp(std::string title)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>250</x>
+      <y>470</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>/deuxD/
+--
+-_support : string 
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>290</x>
+      <y>400</y>
+      <w>160</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>100</x>
+      <y>650</y>
+      <w>250</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>230.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>400</y>
+      <w>350</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;330.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>770</x>
+      <y>640</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>860</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Player
+--
+- _pt : int
+--
++ int get()
++ void update(int res)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>0</y>
+      <w>380</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>CSVReader
+--
+_filename : string
+_delimeter : string
+--
++ CSVReader(string filename, string delm) 
++ vector&lt;vector&lt;string&gt;&gt; getData(std::vector&lt;std::vector&lt;std::string&gt;&gt;&amp; dataList) 
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>850</x>
+      <y>0</y>
+      <w>230</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>SFML for graphics
+Boost for CSVreader
+
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>190</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>100</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>530</x>
+      <y>30</y>
+      <w>220</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;200.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>910</x>
+      <y>890</y>
+      <w>230</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Music
+--
+
+--
++ Music()
++ ~Music()
++ bool openFromFile(const string&amp; filename)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>910</x>
+      <y>770</y>
+      <w>140</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Note..
+Music.hpp is an existing opensource file we used without modifications
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
